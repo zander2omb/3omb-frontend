@@ -1,4 +1,4 @@
-# 3omb Finance Interface
+# 3omb Interface
 
 Thanks for taking the time to contribute!
 You can start by reading our [Contribution guidelines](CONTRIBUTING.md) first.
