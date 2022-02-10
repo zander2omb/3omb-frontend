@@ -437,9 +437,6 @@ export class TombFinance {
 */
 async get2ombStatFake(): Promise<TokenStat> {
   const { TwoOmbFtmRewardPool, TwoOmbFtmLpTombRewardPool, TwoOmbFtmLpTombRewardPoolOld } = this.contracts;
-  /* REMOVE THIS , JUST USED TO COMPARE ABI VS COINGECKO */
-  const price = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=2omb-finance&vs_currencies=usd").then(res => res.json())
-  console.log('COINGECKO PRICE',{ priceInDollars: price["2omb-finance"].usd })
   const TOMB = new ERC20("0x7a6e4e3cc2ac9924605dca4ba31d1831c84b44ae", this.provider, "2OMB")
   const supply = await TOMB.totalSupply();
   const tombRewardPoolSupply = await TOMB.balanceOf(TwoOmbFtmRewardPool.address);
@@ -463,9 +460,6 @@ async get2ombStatFake(): Promise<TokenStat> {
 
 async get2ShareStatFake(): Promise<TokenStat> {
   const { TwoOmbFtmRewardPool, TwoOmbFtmLpTombRewardPool, TwoOmbFtmLpTombRewardPoolOld } = this.contracts;
-  /* REMOVE THIS , JUST USED TO COMPARE ABI VS COINGECKO */
-  const price = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=2share&vs_currencies=usd").then(res => res.json())
-  console.log('COINGECKO PRICE',{ priceInDollars: price["2share"].usd })
   const TSHARE = new ERC20("0xc54a1684fd1bef1f077a336e6be4bd9a3096a6ca", this.provider, "2SHARES")
   const supply = await TSHARE.totalSupply();
   const tombRewardPoolSupply = await TSHARE.balanceOf(TwoOmbFtmRewardPool.address);
