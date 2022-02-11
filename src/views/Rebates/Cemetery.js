@@ -129,8 +129,7 @@ const Cemetery = () => {
                     Bondable Assets
                   </Typography>
                 <Alert variant="filled" severity="warning" style={{ marginBottom: '30px '}}>
-                    This page is under active maintenance - Use at your own risk!
-                    
+                    This page is under active maintenance - We have set the bond Rate to 0 This means you can send money but will get nothing in return.!!!
                 </Alert>
                   <Grid container spacing={3}>
                     {activeBanks
