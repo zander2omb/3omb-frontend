@@ -98,7 +98,7 @@ const Cemetery = () => {
           {!!account ? (
             <>
               <Typography color="textPrimary" align="center" variant="h3" gutterBottom style={{ marginBottom: '40px' }}>
-                3DAO - Rebates
+                WARNING!!! DO NOT USE THIS PAGE YOU WILL 100% Lose MoNeY!!!
               </Typography>
               <Box mt={2}>
                 <Grid container justify="center" spacing={3}>
@@ -129,7 +129,7 @@ const Cemetery = () => {
                     Bondable Assets
                   </Typography>
                 <Alert variant="filled" severity="warning" style={{ marginBottom: '30px '}}>
-                    This page is under active maintenance - please use at your own risk.
+                    This page is under active maintenance - please use at your own risk. Using the Backend will also cost you money!
                 </Alert>
                   <Grid container spacing={3}>
                     {activeBanks
