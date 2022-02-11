@@ -128,6 +128,9 @@ const Cemetery = () => {
                   <Typography color="textPrimary" variant="h4" gutterBottom style={{ marginTop: '35px', marginBottom: '30px' }}>
                     Bondable Assets
                   </Typography>
+                <Alert variant="filled" severity="warning" style={{ marginBottom: '30px '}}>
+                    This page is under active maintenance - please use at your own risk.
+                </Alert>
                   <Grid container spacing={3}>
                     {activeBanks
                       .filter((bank) => bank.sectionInUI === 3)
