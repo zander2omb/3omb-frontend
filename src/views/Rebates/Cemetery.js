@@ -98,7 +98,7 @@ const Cemetery = () => {
           {!!account ? (
             <>
               <Typography color="textPrimary" align="center" variant="h3" gutterBottom style={{ marginBottom: '40px' }}>
-                WARNING!!! DO NOT USE THIS PAGE YOU WILL 100% Lose MoNeY!!!
+                3DAO - Tresury * Still under Mantance 50% done *
               </Typography>
               <Box mt={2}>
                 <Grid container justify="center" spacing={3}>
