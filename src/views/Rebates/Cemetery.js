@@ -129,7 +129,8 @@ const Cemetery = () => {
                     Bondable Assets
                   </Typography>
                 <Alert variant="filled" severity="warning" style={{ marginBottom: '30px '}}>
-                    This page is under active maintenance - please use at your own risk. Using the Backend will also cost you money!
+                    This page is under active maintenance - Use at your own risk!
+                    
                 </Alert>
                   <Grid container spacing={3}>
                     {activeBanks
