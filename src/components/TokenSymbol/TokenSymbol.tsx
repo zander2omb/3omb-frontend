@@ -24,6 +24,8 @@ import TwoombLPLogo from '../../assets/img/2OMB-WFTM.png';
 import TwosharesLPLogo from '../../assets/img/2SHARES-WFTM.png';
 import TwoombTwosharesLPLogo from '../../assets/img/2OMB-2SHARES.png';
 
+import UsdcLogo from '../../assets/img/USDC.png';
+
 import ThreeombLPLogo from '../../assets/img/3OMB-WFTM.png';
 import ThreesharesLPLogo from '../../assets/img/3SHARES-WFTM.png';
 
@@ -42,6 +44,7 @@ const logosBySymbol: { [title: string]: string } = {
   BELUGA: belugaLogo,
   BIFI: bifiLogo,
   MIM: mimLogo,
+  USDC: UsdcLogo,
   BLOOM: bloomLogo,
   '2OMB-WFTM LP': TwoombLPLogo,
   '2SHARES-WFTM LP': TwosharesLPLogo,

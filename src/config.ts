@@ -12,7 +12,7 @@ const configurations: { [env: string]: Configuration } = {
     deployments: require('./tomb-finance/deployments/deployments.mainnet.json'),
     externalTokens: {
       WFTM: ['0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83', 18],
-      FUSDT: ['0x04068DA6C83AFCFA0e13ba15A6696662335D5B75', 6], // This is actually usdc on mainnet not fusdt
+      USDC: ['0x04068DA6C83AFCFA0e13ba15A6696662335D5B75', 6],
       BOO: ['0x841FAD6EAe12c286d1Fd18d1d525DFfA75C7EFFE', 18],
       ZOO: ['0x09e145a1d53c0045f41aeef25d8ff982ae74dd56', 0],
       SHIBA: ['0x9ba3e4f84a34df4e08c112e1a0ff148b81655615', 9],
@@ -305,6 +305,20 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     buyLink: '',
     site: '',
     sort: 5,
+    closedForStaking: false,
+  },
+  USDCRebates: {
+    name: 'Bond USDC, earn 3OMB',
+    poolId: 0,
+    sectionInUI: 3,
+    contract: 'TombFtmRewardPool',
+    depositTokenName: 'USDC',
+    earnTokenName: '3OMB',
+    finished: false,
+    multiplier: '15000x',
+    buyLink: '',
+    site: '',
+    sort: 6,
     closedForStaking: false,
   },
   Tomb2SHARESFTMRebates: {
