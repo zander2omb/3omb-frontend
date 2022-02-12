@@ -7,9 +7,10 @@ import AccountModal from './AccountModal';
 
 interface AccountButtonProps {
   text?: string;
+  onOpen?: () => void;
 }
 
-const AccountButton: React.FC<AccountButtonProps> = ({ text }) => {
+const AccountButton: React.FC<AccountButtonProps> = ({ text, onOpen }) => {
   const { account } = useWallet();
   const [onPresentAccountModal] = useModal(<AccountModal />);
 
@@ -17,11 +18,17 @@ const AccountButton: React.FC<AccountButtonProps> = ({ text }) => {
 
   const handleWalletProviderOpen = () => {
     setWalletProviderOpen(true);
+    onOpen && onOpen();
   };
 
   const handleWalletProviderClose = () => {
     setWalletProviderOpen(false);
   };
+
+  const handleAccountModalOpen = () => {
+    onPresentAccountModal()
+    onOpen && onOpen();
+  }
 
   const buttonText = text ? text : 'Unlock';
 
@@ -32,7 +39,7 @@ const AccountButton: React.FC<AccountButtonProps> = ({ text }) => {
           {buttonText}
         </Button>
       ) : (
-        <Button variant="contained" onClick={onPresentAccountModal}>
+        <Button variant="contained" onClick={handleAccountModalOpen}>
           My Wallet
         </Button>
       )}
