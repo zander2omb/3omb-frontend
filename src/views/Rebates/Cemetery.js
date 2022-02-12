@@ -36,10 +36,7 @@ const BackgroundImage = createGlobalStyle`
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
-    height: '100%',
-    [theme.breakpoints.up('md')]: {
-      height: '90px',
-    },
+    height: '100%'
   },
 }));
 
