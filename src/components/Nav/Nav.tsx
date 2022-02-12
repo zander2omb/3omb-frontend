@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     width: 240,
     flexShrink: 0,
+    backgroundColor: 'var(--accent)'
   },
   drawerPaper: {
     width: 240,
