@@ -84,8 +84,8 @@ const Stake: React.FC = () => {
                 <TokenSymbol symbol="TSHARE" />
               </CardIcon>
               <Value value={getDisplayBalance(stakedBalance)} />
-              <Label text={`≈ $${tokenPriceInDollars}`} color="#5f51c2" />
-              <Label text={'3SHARES Staked'} color="#5f51c2" />
+              <Label text={`≈ $${tokenPriceInDollars}`} />
+              <Label text={'3SHARES Staked'} />
             </StyledCardHeader>
             <StyledCardActions>
               {approveStatus !== ApprovalState.APPROVED ? (
