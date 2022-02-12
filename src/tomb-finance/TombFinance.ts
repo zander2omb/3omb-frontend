@@ -564,14 +564,14 @@ export class TombFinance {
   async getWFTMPriceFromPancakeswap(): Promise<string> {
     const ready = await this.provider.ready;
     if (!ready) return;
-    const { WFTM, FUSDT } = this.externalTokens;
+    const { WFTM, USDC } = this.externalTokens;
     try {
       const fusdt_wftm_lp_pair = this.externalTokens['USDT-FTM-LP'];
       let ftm_amount_BN = await WFTM.balanceOf(fusdt_wftm_lp_pair.address);
       let ftm_amount = Number(getFullDisplayBalance(ftm_amount_BN, WFTM.decimal));
-      let fusdt_amount_BN = await FUSDT.balanceOf(fusdt_wftm_lp_pair.address);
-      let fusdt_amount = Number(getFullDisplayBalance(fusdt_amount_BN, FUSDT.decimal));
-      return (fusdt_amount / ftm_amount).toString();
+      let USDC_amount_BN = await USDC.balanceOf(fusdt_wftm_lp_pair.address);
+      let USDC_amount = Number(getFullDisplayBalance(USDC_amount_BN, USDC.decimal));
+      return (USDC_amount / ftm_amount).toString();
     } catch (err) {
       console.error(`Failed to fetch token price of WFTM: ${err}`);
     }
