@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import Page from '../../components/Page';
 import HomeImage from '../../assets/img/home.png';
 import CashImage from '../../assets/img/3OMB.svg';
+import devilLogo from '../../assets/img/devil-logo.png';
 import Image from 'material-ui-image';
 import styled from 'styled-components';
 import { Alert } from '@material-ui/lab';
@@ -146,12 +147,12 @@ const Home = () => {
       <BackgroundImage />
       <Grid container spacing={3}>
         {/* Logo */}
-        <Grid container item xs={12} sm={4} justify="center">
+        <Grid container item xs={12} sm={3} justify="center">
           {/* <Paper>xs=6 sm=3</Paper> */}
-          <Image color="none" style={{ width: '300px', paddingTop: '0px' }} src={CashImage} />
+		      <Image className="ombImg-home" color="none" style={{ width: '300px', paddingTop: '0px' }} src={CashImage} />
         </Grid>
         {/* Explanation text */}
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={6}>
           <Paper style={{ backgroundColor: "transparent", boxShadow: "none", border: "1px solid var(--white)" }}>
             <Box p={4}>
               <h2>Welcome to 3omb Finance!</h2>
@@ -164,9 +165,16 @@ const Home = () => {
               </p>
             </Box>
           </Paper>
-
-
-
+				</Grid>
+				<Grid container item xs={12} sm={3} justify="center">
+          <a
+            target="_blank"
+            href="https://www.devilfinance.io"
+            className="devilLogo"
+            style={{ width: '100%', height: '100%', objectFit: 'contain', paddingTop: '5px' }}
+          >
+            <Image color="none" src={devilLogo} />
+          </a>
         </Grid>
 
         <Grid container justify="center">
