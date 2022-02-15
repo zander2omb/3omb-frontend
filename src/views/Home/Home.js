@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import Page from '../../components/Page';
 import HomeImage from '../../assets/img/home.png';
 import CashImage from '../../assets/img/3OMB.svg';
-import devilLogo from '../../assets/img/devil-logo.png';
 import Image from 'material-ui-image';
 import styled from 'styled-components';
 import { Alert } from '@material-ui/lab';
@@ -166,17 +165,6 @@ const Home = () => {
             </Box>
           </Paper>
 				</Grid>
-				<Grid container item xs={12} sm={3} justify="center">
-          <a
-            target="_blank"
-            href="https://www.devilfinance.io"
-            className="devilLogo"
-            style={{ width: '100%', height: '100%', objectFit: 'contain', paddingTop: '5px' }}
-          >
-            <Image color="none" src={devilLogo} />
-          </a>
-        </Grid>
-
         <Grid container justify="center">
             <Box mt={3} style={{ width: '1000px' }}>
             <Alert variant="filled" severity="warning">
