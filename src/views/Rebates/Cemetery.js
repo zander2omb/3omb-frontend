@@ -129,9 +129,9 @@ const Cemetery = () => {
                   <Typography color="textPrimary" variant="h4" gutterBottom style={{ marginTop: '35px', marginBottom: '30px' }}>
                     Bondable Assets
                   </Typography>
-                <Alert color='warning' variant="standard" style={{ marginBottom: '30px'}}>
+            <Alert variant="filled" severity="warning">
                     <h1>This page is under active maintenance. We have set the bond Rate to 0. This means you can send money but will get nothing in return!!!</h1>
-                </Alert>
+            </Alert>
                   <Grid container spacing={3}>
                     {activeBanks
                       .filter((bank) => bank.sectionInUI === 3)
