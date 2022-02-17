@@ -140,7 +140,7 @@ const Nav = () => {
               <Link color="textPrimary" to="/regulations" className={classes.link}>
                 Regulations
               </Link> */}
-              <a href="https://beluga.fi" target="_blank" className={classes.link}>
+              <a href="https://www.devilfinance.io" target="_blank" className={classes.link}>
                 Vaults
               </a>
               <a href="https://snapshot.org/#/forgiving.forg.eth" target="_blank" className={classes.link}>
@@ -167,7 +167,7 @@ const Nav = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              3omb Finance
+            2 | 3omb
             </Typography>
 
             <Drawer
@@ -202,9 +202,9 @@ const Nav = () => {
                 <ListItem button component="a" href="https://beluga.fi">
                   <ListItemText>Vaults</ListItemText>
                 </ListItem>
-                <ListItem button component="a" href="https://snapshot.org/#/forgiving.forg.eth">
+                {/* <ListItem button component="a" href="https://snapshot.org/#/forgiving.forg.eth">
                   <ListItemText>Governance</ListItemText>
-                </ListItem>
+                </ListItem> */}
                 <ListItem button component="a" href="https://gedeon-crypto.gitbook.io/3omb.finance/">
                   <ListItemText>Docs</ListItemText>
                 </ListItem>

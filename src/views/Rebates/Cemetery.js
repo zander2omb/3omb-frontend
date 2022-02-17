@@ -99,7 +99,7 @@ const Cemetery = () => {
           {!!account ? (
             <>
               <Typography color="textPrimary" align="center" variant="h3" gutterBottom style={{ marginBottom: '40px' }}>
-                3DAO - Treasury * Still under Mantance 70% done *
+                3DAO
               </Typography>
               <Box mt={2}>
                 <Grid container justify="center" spacing={3}>
@@ -129,8 +129,8 @@ const Cemetery = () => {
                   <Typography color="textPrimary" variant="h4" gutterBottom style={{ marginTop: '35px', marginBottom: '30px' }}>
                     Bondable Assets
                   </Typography>
-                <Alert variant="filled" severity="warning" style={{ marginBottom: '30px '}}>
-                    This page is under active maintenance - We have set the bond Rate to 0 This means you can send money but will get nothing in return.!!!
+                <Alert color='warning' variant="standard" style={{ marginBottom: '30px'}}>
+                    <h1>This page is under active maintenance. We have set the bond Rate to 0. This means you can send money but will get nothing in return!!!</h1>
                 </Alert>
                   <Grid container spacing={3}>
                     {activeBanks
