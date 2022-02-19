@@ -57,11 +57,11 @@ const Cemetery = () => {
   const rebateStats = useRebateTreasury()
   console.log(rebateStats)
   const [claimable3omb, setClaimable3omb] = useState(0);
-  const [ vested, setVested ] = useState(0)
+  const [vested, setVested] = useState(0)
 
   useEffect(() => {
     updateVesting()
-    const interval = setInterval(updateVesting, 5000) 
+    const interval = setInterval(updateVesting, 5000)
     return () => clearInterval(interval)
   }, [])
 
@@ -74,7 +74,7 @@ const Cemetery = () => {
     const vesting = await rebateStats.RebateTreasury.methods.vesting(address).call()
     setClaimable3omb(+web3.utils.fromWei(claimable))
     setVested(+web3.utils.fromWei(BN(vesting.amount).sub(BN(vesting.claimed))))
-}
+  }
 
   async function claimTomb() {
     console.log("claiming the tomb")
