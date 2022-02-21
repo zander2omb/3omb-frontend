@@ -74,7 +74,7 @@ function useTotalTreasuryBalance() {
         console.log(`2Shares + 3omb: $${data2sharesAnd3omb.data.usd_value}`)
         const LP_2shares_wftm = await getLPPrice('0x6398ACBBAB2561553a9e458Ab67dCFbD58944e52', '0xc54a1684fd1bef1f077a336e6be4bd9a3096a6ca')
         const LP_3omb_wftm = await getLPPrice('0x83A52eff2E9D112E9B022399A9fD22a9DB7d33Ae', '0x14def7584a6c52f470ca4f4b9671056b22f4ffde')
-        const LP_3shares_wftm = await getLPPrice('0xd352daC95a91AfeFb112DBBB3463ccfA5EC15b65', '0x6437adac543583c4b31bf0323a0870430f5cc2e7')
+        const LP_3shares_wftm = await getLPPrice('0xd352daC95a91AfeFb112DBBB3463ccfA5EC15b65', '0x6437ADAC543583C4b31Bf0323A0870430F5CC2e7')
         setBalance(data2sharesAnd3omb.data.usd_value + value3shares + LP_2shares_wftm + LP_3omb_wftm + LP_3shares_wftm)
         setBalance_2shares_wftm(LP_2shares_wftm)
         setBalance_3omb_wftm(LP_3omb_wftm)

@@ -52,10 +52,11 @@ const Home = () => {
   const TVL = useTotalValueLocked();
   const tombFtmLpStats = useLpStats('TOMB-FTM-LP');
   const tShareFtmLpStats = useLpStats('TSHARE-FTM-LP');
+  const tShare3ombLpStats = useLpStats('3SHARES-3OMB LP');
   const tombStats = useTombStats();
   const tShareStats = usetShareStats();
   const tBondStats = useBondStats();
-  const tombFinance = useTombFinance();
+  // const tombFinance = useTombFinance();
   const { price: ftmPrice, marketCap: ftmMarketCap, priceChange: ftmPriceChange } = useFantomPrice();
   const { balance: rebatesTVL } = useTotalTreasuryBalance();
   const totalTVL = TVL + rebatesTVL;
@@ -74,7 +75,8 @@ const Home = () => {
   const buyTShareAddress = 'https://spookyswap.finance/swap?outputCurrency=' + tShare.address;
 
   const tombLPStats = useMemo(() => (tombFtmLpStats ? tombFtmLpStats : null), [tombFtmLpStats]);
-  const tshareLPStats = useMemo(() => (tShareFtmLpStats ? tShareFtmLpStats : null), [tShareFtmLpStats]);
+  const tshareFTM_LPStats = useMemo(() => (tShareFtmLpStats ? tShareFtmLpStats : null), [tShareFtmLpStats]);
+  const tshare3ombLPStats = useMemo(() => (tShare3ombLpStats ? tShare3ombLpStats : null), [tShare3ombLpStats]);
   const tombPriceInDollars = useMemo(
     () => (tombStats ? Number(tombStats.priceInDollars).toFixed(2) : null),
     [tombStats],
@@ -412,15 +414,44 @@ const Home = () => {
             </Box>*/}
               <Box mt={2}>
                 <span style={{ fontSize: '26px' }}>
-                  {tshareLPStats?.tokenAmount ? tshareLPStats?.tokenAmount : '-.--'} 3SHARE /{' '}
-                  {tshareLPStats?.ftmAmount ? tshareLPStats?.ftmAmount : '-.--'} FTM
+                  {tshareFTM_LPStats?.tokenAmount ? tshareFTM_LPStats?.tokenAmount : '-.--'} 3SHARE /{' '}
+                  {tshareFTM_LPStats?.ftmAmount ? tshareFTM_LPStats?.ftmAmount : '-.--'} FTM
                 </span>
               </Box>
-              <Box style={{ fontSize: '18px' }}>${tshareLPStats?.priceOfOne ? tshareLPStats.priceOfOne : '-.--'}</Box>
+              <Box style={{ fontSize: '18px' }}>${tshareFTM_LPStats?.priceOfOne ? tshareFTM_LPStats.priceOfOne : '-.--'}</Box>
               <span style={{ fontSize: '14px' }}>
-                Liquidity: ${tshareLPStats?.totalLiquidity ? tshareLPStats.totalLiquidity : '-.--'}
+                Liquidity: ${tshareFTM_LPStats?.totalLiquidity ? tshareFTM_LPStats.totalLiquidity : '-.--'}
                 <br />
-                Total supply: {tshareLPStats?.totalSupply ? tshareLPStats.totalSupply : '-.--'}
+                Total supply: {tshareFTM_LPStats?.totalSupply ? tshareFTM_LPStats.totalSupply : '-.--'}
+              </span>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Card style={{ backgroundColor: "transparent", boxShadow: "none", border: "1px solid var(--white)" }}>
+            <CardContent align="center">
+              <h2>3SHARES-3OMB Spooky LP</h2>
+              <Box mt={2}>
+                <CardIcon>
+                  <TokenSymbol symbol="3SHARES-3OMB LP" />
+                </CardIcon>
+              </Box>
+              {/*<Box mt={2}>
+                <Button color="primary" onClick={onPresentTshareZap} variant="contained">
+                  Zap In
+                </Button>
+            </Box>*/}
+              <Box mt={2}>
+                <span style={{ fontSize: '26px' }}>
+                  {tshare3ombLPStats?.tokenAmount ? tshare3ombLPStats?.tokenAmount : '-.--'} 3SHARE /{' '}
+                  {tshare3ombLPStats?.ftmAmount ? tshare3ombLPStats?.ftmAmount : '-.--'} 3OMB
+                </span>
+              </Box>
+              <Box style={{ fontSize: '18px' }}>${tshare3ombLPStats?.priceOfOne ? tshare3ombLPStats.priceOfOne : '-.--'}</Box>
+              <span style={{ fontSize: '14px' }}>
+                Liquidity: ${tshare3ombLPStats?.totalLiquidity ? tshare3ombLPStats.totalLiquidity : '-.--'}
+                <br />
+                Total supply: {tshare3ombLPStats?.totalSupply ? tshare3ombLPStats.totalSupply : '-.--'}
               </span>
             </CardContent>
           </Card>
