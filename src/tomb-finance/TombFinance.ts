@@ -301,14 +301,19 @@ export class TombFinance {
       return await poolContract.epochTombPerSecond(0);
     }
     const rewardPerSecond = await poolContract.tSharePerSecond();
-    if (depositTokenName.startsWith('3OMB')) {
-      return rewardPerSecond.mul(35500).div(89500);
-    } else if (depositTokenName.startsWith('2OMB')) {
-      return rewardPerSecond.mul(15000).div(89500);
-    } else if (depositTokenName.startsWith('2SHARE')) {
-      return rewardPerSecond.mul(15000).div(89500);
-    } else {
-      return rewardPerSecond.mul(24000).div(89500);
+    switch (depositTokenName) {
+      case "3OMB-WFTM LP":
+        return rewardPerSecond.mul(35500).div(128000);
+      case "2OMB-WFTM LP":
+        return rewardPerSecond.mul(15000).div(128000);
+      case "3SHARES-WFTM LP":
+        return rewardPerSecond.mul(24000).div(128000);
+      case "2SHARES-WFTM LP":
+        return rewardPerSecond.mul(15000).div(128000);
+      case "3SHARES-3OMB LP":
+        return rewardPerSecond.mul(35500).div(128000);
+      default:
+        return rewardPerSecond.mul(24000).div(128000);
     }
   }
 
