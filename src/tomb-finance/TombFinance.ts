@@ -332,7 +332,7 @@ export class TombFinance {
       tokenPrice = priceOfOneFtmInDollars;
     } else {
       console.log("token name:", tokenName)
-      if (tokenName === '3OMB-WFTM LP') {
+      if (tokenName === '3OMB-WFTM LP' || tokenName === 'TOMB-FTM-LP') {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true, false);
       } else if (tokenName === '3SHARES-WFTM LP') {
         tokenPrice = await this.getLPTokenPrice(token, this.TSHARE, false, false);

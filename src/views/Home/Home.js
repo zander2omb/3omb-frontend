@@ -119,6 +119,10 @@ const Home = () => {
     color: var(--accent-light);
   `;
 
+  function currencyFormat(num) {
+    return Number(num).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
+
   const [onPresentTombZap, onDissmissTombZap] = useModal(
     <ZapModal
       decimals={18}
@@ -248,7 +252,7 @@ const Home = () => {
                 <span style={{ fontSize: '30px' }}>${ftmPrice ? ftmPrice : '-.----'} USD</span>
               </Box>
               <span style={{ fontSize: '14px' }}>
-                Market Cap: ${ftmMarketCap} <br />
+                Market Cap: ${currencyFormat(ftmMarketCap)} <br />
                 Price Change 24h: {ftmPriceChange.toFixed(2)}% <br />
                 <br />
                 <br />
@@ -288,9 +292,9 @@ const Home = () => {
                 </span>
               </Box>
               <span style={{ fontSize: '14px' }}>
-                Market Cap: ${(tombCirculatingSupply * tombPriceInDollars).toFixed(2)} <br />
-                Circulating Supply: {tombCirculatingSupply} <br />
-                Total Supply: {tombTotalSupply}
+                Market Cap: ${currencyFormat(tombCirculatingSupply * tombPriceInDollars)} <br />
+                Circulating Supply: {currencyFormat(tombCirculatingSupply)} <br />
+                Total Supply: {currencyFormat(tombTotalSupply)}
               </span>
             </CardContent>
           </Card>
@@ -322,12 +326,12 @@ const Home = () => {
                 <span style={{ fontSize: '30px' }}>{tSharePriceInFTM ? tSharePriceInFTM : '-.----'} FTM</span>
               </Box>
               <Box>
-                <span style={{ fontSize: '18px' }}>${tSharePriceInDollars ? tSharePriceInDollars : '-.--'}</span>
+                <span style={{ fontSize: '18px' }}>${tSharePriceInDollars ? currencyFormat(tSharePriceInDollars) : '-.--'}</span>
               </Box>
               <span style={{ fontSize: '14px' }}>
-                Market Cap: ${(tShareCirculatingSupply * tSharePriceInDollars).toFixed(2)} <br />
-                Circulating Supply: {tShareCirculatingSupply} <br />
-                Total Supply: {tShareTotalSupply}
+                Market Cap: ${currencyFormat(tShareCirculatingSupply * tSharePriceInDollars)} <br />
+                Circulating Supply: {currencyFormat(tShareCirculatingSupply)} <br />
+                Total Supply: {currencyFormat(tShareTotalSupply)}
               </span>
             </CardContent>
           </Card>
@@ -362,9 +366,9 @@ const Home = () => {
                 <span style={{ fontSize: '18px' }}>${tBondPriceInDollars ? tBondPriceInDollars : '-.--'}</span>
               </Box>
               <span style={{ fontSize: '14px' }}>
-                Market Cap: ${(tBondCirculatingSupply * tBondPriceInDollars).toFixed(2)} <br />
-                Circulating Supply: {tBondCirculatingSupply} <br />
-                Total Supply: {tBondTotalSupply}
+                Market Cap: ${currencyFormat(tBondCirculatingSupply * tBondPriceInDollars)} <br />
+                Circulating Supply: {currencyFormat(tBondCirculatingSupply)} <br />
+                Total Supply: {currencyFormat(tBondTotalSupply)}
               </span>
             </CardContent>
           </Card>
@@ -392,8 +396,8 @@ const Home = () => {
               </Box>
               <Box style={{ fontSize: '18px' }}>${tombLPStats?.priceOfOne ? tombLPStats.priceOfOne : '-.--'}</Box>
               <span style={{ fontSize: '14px' }}>
-                Liquidity: ${tombLPStats?.totalLiquidity ? tombLPStats.totalLiquidity : '-.--'} <br />
-                Total supply: {tombLPStats?.totalSupply ? tombLPStats.totalSupply : '-.--'}
+                Liquidity: ${tombLPStats?.totalLiquidity ? currencyFormat(tombLPStats.totalLiquidity) : '-.--'} <br />
+                Total supply: {tombLPStats?.totalSupply ? currencyFormat(tombLPStats.totalSupply) : '-.--'}
               </span>
             </CardContent>
           </Card>
@@ -420,9 +424,9 @@ const Home = () => {
               </Box>
               <Box style={{ fontSize: '18px' }}>${tshareFTM_LPStats?.priceOfOne ? tshareFTM_LPStats.priceOfOne : '-.--'}</Box>
               <span style={{ fontSize: '14px' }}>
-                Liquidity: ${tshareFTM_LPStats?.totalLiquidity ? tshareFTM_LPStats.totalLiquidity : '-.--'}
+                Liquidity: ${tshareFTM_LPStats?.totalLiquidity ? currencyFormat(tshareFTM_LPStats.totalLiquidity) : '-.--'}
                 <br />
-                Total supply: {tshareFTM_LPStats?.totalSupply ? tshareFTM_LPStats.totalSupply : '-.--'}
+                Total supply: {tshareFTM_LPStats?.totalSupply ? currencyFormat(tshareFTM_LPStats.totalSupply) : '-.--'}
               </span>
             </CardContent>
           </Card>
@@ -449,9 +453,9 @@ const Home = () => {
               </Box>
               <Box style={{ fontSize: '18px' }}>${tshare3ombLPStats?.priceOfOne ? tshare3ombLPStats.priceOfOne : '-.--'}</Box>
               <span style={{ fontSize: '14px' }}>
-                Liquidity: ${tshare3ombLPStats?.totalLiquidity ? tshare3ombLPStats.totalLiquidity : '-.--'}
+                Liquidity: ${tshare3ombLPStats?.totalLiquidity ? currencyFormat(tshare3ombLPStats.totalLiquidity) : '-.--'}
                 <br />
-                Total supply: {tshare3ombLPStats?.totalSupply ? tshare3ombLPStats.totalSupply : '-.--'}
+                Total supply: {tshare3ombLPStats?.totalSupply ? currencyFormat(tshare3ombLPStats.totalSupply) : '-.--'}
               </span>
             </CardContent>
           </Card>
