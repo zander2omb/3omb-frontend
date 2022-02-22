@@ -303,17 +303,17 @@ export class TombFinance {
     const rewardPerSecond = await poolContract.tSharePerSecond();
     switch (depositTokenName) {
       case "3OMB-WFTM LP":
-        return rewardPerSecond.mul(35500).div(128000);
+        return rewardPerSecond.mul(35500).div(125000);
       case "2OMB-WFTM LP":
-        return rewardPerSecond.mul(15000).div(128000);
+        return rewardPerSecond.mul(15000).div(125000);
       case "3SHARES-WFTM LP":
-        return rewardPerSecond.mul(24000).div(128000);
+        return rewardPerSecond.mul(24000).div(125000);
       case "2SHARES-WFTM LP":
-        return rewardPerSecond.mul(15000).div(128000);
+        return rewardPerSecond.mul(15000).div(125000);
       case "3SHARES-3OMB LP":
-        return rewardPerSecond.mul(35500).div(128000);
+        return rewardPerSecond.mul(35500).div(125000);
       default:
-        return rewardPerSecond.mul(24000).div(128000);
+        return rewardPerSecond.mul(24000).div(125000);
     }
   }
 

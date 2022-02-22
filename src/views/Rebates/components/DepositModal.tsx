@@ -59,7 +59,15 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
 
   function formatOutAmount() {
     const outAmount = getOutAmount()
-    return `Receiving: ${outAmount.toFixed(4)} 3OMB ($${(outAmount * rebateStats.tombPrice * ftmPrice).toFixed(2)})`
+    const outputUSD = (outAmount * rebateStats.tombPrice * ftmPrice)
+    return `Receiving: ${outAmount.toFixed(4)} 3OMB ($${outputUSD.toFixed(2)})`
+  }
+
+  function formatReturn() {
+    const outAmount = getOutAmount()
+    const inputUSD = ((+val) * getAssetPrice(tokenName) * ftmPrice)
+    const outputUSD = (outAmount * rebateStats.tombPrice * ftmPrice)
+    return `Total Return: ${((100*(outputUSD-inputUSD)/inputUSD)).toFixed(2)}%`
   }
 
   function formatInAmount() {
@@ -81,6 +89,9 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
       </StyledMaxText>
       <StyledMaxText>
         { formatOutAmount() }
+      </StyledMaxText>
+      <StyledMaxText>
+        { val ? formatReturn() : "" }
       </StyledMaxText>
       <StyledMaxText style = {{color: getOutAmount() < rebateStats.tombAvailable ? "black" : "var(--accent)"}}>
         {rebateStats.tombAvailable > 0 ? `${rebateStats.tombAvailable.toFixed(4)} 3OMB Available` : "Bond Sold Out"}
