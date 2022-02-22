@@ -113,7 +113,7 @@ const Cemetery = () => {
                       </CardContent>
                     </Card>
                   </Grid>
-                  <Grid item xs={12} md={3} lg={3} className={classes.gridItem}>
+                  {/* <Grid item xs={12} md={3} lg={3} className={classes.gridItem}>
                     <Card className={classes.gridItem}>
                       <CardContent align="center">
                         <Typography variant="h5">
@@ -122,7 +122,7 @@ const Cemetery = () => {
                         <Typography variant="h6">{rebateStats.bondPremium.toFixed(3)}%</Typography>
                       </CardContent>
                     </Card>
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </Box>
               <div hidden={activeBanks.filter((bank) => bank.sectionInUI === 0).length === 0}>
