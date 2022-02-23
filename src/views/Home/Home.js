@@ -53,6 +53,8 @@ const Home = () => {
   const tombFtmLpStats = useLpStats('TOMB-FTM-LP');
   const tShareFtmLpStats = useLpStats('TSHARE-FTM-LP');
   const tShare3ombLpStats = useLpStats('3SHARES-3OMB LP');
+  const TwoombTombLpStats = useLpStats('2OMB-TOMB LP');
+  const ThreeombTombLpStats = useLpStats('3OMB-TOMB LP');
   const tombStats = useTombStats();
   const tShareStats = usetShareStats();
   const tBondStats = useBondStats();
@@ -77,6 +79,8 @@ const Home = () => {
   const tombLPStats = useMemo(() => (tombFtmLpStats ? tombFtmLpStats : null), [tombFtmLpStats]);
   const tshareFTM_LPStats = useMemo(() => (tShareFtmLpStats ? tShareFtmLpStats : null), [tShareFtmLpStats]);
   const tshare3ombLPStats = useMemo(() => (tShare3ombLpStats ? tShare3ombLpStats : null), [tShare3ombLpStats]);
+  const twoombTombLpStats = useMemo(() => (TwoombTombLpStats ? TwoombTombLpStats : null), [TwoombTombLpStats]);
+  const threeombTombLpStats = useMemo(() => (ThreeombTombLpStats ? ThreeombTombLpStats : null), [ThreeombTombLpStats]);
   const tombPriceInDollars = useMemo(
     () => (tombStats ? Number(tombStats.priceInDollars).toFixed(2) : null),
     [tombStats],
@@ -440,11 +444,6 @@ const Home = () => {
                   <TokenSymbol symbol="3SHARES-3OMB LP" />
                 </CardIcon>
               </Box>
-              {/*<Box mt={2}>
-                <Button color="primary" onClick={onPresentTshareZap} variant="contained">
-                  Zap In
-                </Button>
-            </Box>*/}
               <Box mt={2}>
                 <span style={{ fontSize: '26px' }}>
                   {tshare3ombLPStats?.tokenAmount ? tshare3ombLPStats?.tokenAmount : '-.--'} 3SHARE /{' '}
@@ -460,6 +459,54 @@ const Home = () => {
             </CardContent>
           </Card>
         </Grid>
+        {/* <Grid item xs={12} sm={6}>
+          <Card style={{ backgroundColor: "transparent", boxShadow: "none", border: "1px solid var(--white)" }}>
+            <CardContent align="center">
+              <h2>3OMB-TOMB Spooky LP</h2>
+              <Box mt={2}>
+                <CardIcon>
+                  <TokenSymbol symbol="3OMB-TOMB LP" />
+                </CardIcon>
+              </Box>
+              <Box mt={2}>
+                <span style={{ fontSize: '26px' }}>
+                  {threeombTombLpStats?.tokenAmount ? threeombTombLpStats?.tokenAmount : '-.--'} 3OMB /{' '}
+                  {threeombTombLpStats?.ftmAmount ? threeombTombLpStats?.ftmAmount : '-.--'} TOMB
+                </span>
+              </Box>
+              <Box style={{ fontSize: '18px' }}>${threeombTombLpStats?.priceOfOne ? threeombTombLpStats.priceOfOne : '-.--'}</Box>
+              <span style={{ fontSize: '14px' }}>
+                Liquidity: ${threeombTombLpStats?.totalLiquidity ? currencyFormat(threeombTombLpStats.totalLiquidity) : '-.--'}
+                <br />
+                Total supply: {threeombTombLpStats?.totalSupply ? currencyFormat(threeombTombLpStats.totalSupply) : '-.--'}
+              </span>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Card style={{ backgroundColor: "transparent", boxShadow: "none", border: "1px solid var(--white)" }}>
+            <CardContent align="center">
+              <h2>2OMB-TOMB Spooky LP</h2>
+              <Box mt={2}>
+                <CardIcon>
+                  <TokenSymbol symbol="2OMB-TOMB LP" />
+                </CardIcon>
+              </Box>
+              <Box mt={2}>
+                <span style={{ fontSize: '26px' }}>
+                  {twoombTombLpStats?.tokenAmount ? twoombTombLpStats?.tokenAmount : '-.--'} 2OMB /{' '}
+                  {twoombTombLpStats?.ftmAmount ? twoombTombLpStats?.ftmAmount : '-.--'} TOMB
+                </span>
+              </Box>
+              <Box style={{ fontSize: '18px' }}>${twoombTombLpStats?.priceOfOne ? twoombTombLpStats.priceOfOne : '-.--'}</Box>
+              <span style={{ fontSize: '14px' }}>
+                Liquidity: ${twoombTombLpStats?.totalLiquidity ? currencyFormat(twoombTombLpStats.totalLiquidity) : '-.--'}
+                <br />
+                Total supply: {twoombTombLpStats?.totalSupply ? currencyFormat(twoombTombLpStats.totalSupply) : '-.--'}
+              </span>
+            </CardContent>
+          </Card>
+        </Grid> */}
       </Grid>
     </Page>
   );

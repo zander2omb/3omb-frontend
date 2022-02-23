@@ -29,6 +29,8 @@ import UsdcLogo from '../../assets/img/USDC.png';
 import ThreeombLPLogo from '../../assets/img/3OMB-WFTM.png';
 import ThreesharesLPLogo from '../../assets/img/3SHARES-WFTM.png';
 import ThreesharesThreeombLPLogo from '../../assets/img/3SHARES-3OMB.png';
+import ThreeombTombLPLogo from '../../assets/img/3OMB-TOMB.png';
+import TwoombTombLPLogo from '../../assets/img/2OMB-TOMB.png';
 
 const logosBySymbol: { [title: string]: string } = {
   //Real tokens
@@ -55,6 +57,8 @@ const logosBySymbol: { [title: string]: string } = {
   '3SHARES-WFTM LP': ThreesharesLPLogo,
   '3SHARES-3OMB LP': ThreesharesThreeombLPLogo,
 
+  '3OMB-TOMB LP': ThreeombTombLPLogo,
+  '2OMB-TOMB LP': TwoombTombLPLogo,
 
   'wFTM': wftmLogo,
   '2OMB': twoombLogo,
